@@ -1,4 +1,4 @@
-package com.summerwork;
+package com.summerwork.string;
 
 /**
  * 测试 Java 字符占用几个字节

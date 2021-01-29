@@ -1,4 +1,4 @@
-package com.summerwork;
+package com.summerwork.properties;
 
 import java.util.Properties;
 

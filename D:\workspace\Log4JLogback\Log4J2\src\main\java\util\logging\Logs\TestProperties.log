@@ -1,0 +1,90 @@
+一月 29, 2021 5:38:39 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:38:39 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:38:39 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:38:39 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:38:39 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:38:53 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:38:53 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:38:53 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:38:53 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:38:53 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:39:32 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:39:32 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:39:32 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:39:32 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:39:32 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:40:21 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:40:21 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:40:21 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:40:21 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:40:21 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:41:18 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:41:18 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:41:18 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:41:18 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:41:18 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:41:52 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:41:52 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:41:52 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:41:52 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:41:52 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 29, 2021 5:42:57 下午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 29, 2021 5:42:57 下午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 29, 2021 5:42:57 下午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 29, 2021 5:42:57 下午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 29, 2021 5:42:57 下午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 30, 2021 9:10:07 上午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 30, 2021 9:10:07 上午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 30, 2021 9:10:07 上午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 30, 2021 9:10:07 上午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 30, 2021 9:10:07 上午 com.summerwork.logging.JdkLoggingTest main
+信息: []
+一月 30, 2021 9:10:25 上午 com.summerwork.logging.JdkLoggingTest main
+严重: 这是[severe]信息
+一月 30, 2021 9:10:25 上午 com.summerwork.logging.JdkLoggingTest main
+信息: start process...
+一月 30, 2021 9:10:25 上午 com.summerwork.logging.JdkLoggingTest main
+警告: memory is running out...
+一月 30, 2021 9:10:25 上午 com.summerwork.logging.JdkLoggingTest main
+严重: process will be terminated...
+一月 30, 2021 9:10:25 上午 com.summerwork.logging.JdkLoggingTest main
+信息: []

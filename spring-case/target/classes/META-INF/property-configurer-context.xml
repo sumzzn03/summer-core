@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource" class="com.summer.domain.DataSource">
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+
+    <!-- PlaceholderConfigurer -->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:applicationContext.properties"/>
+    </bean>
+
+    <bean id="dataSourceOverride" class="com.summer.domain.DataSource">
+        <property name="url" value="jdbc:saaaaaaaa" />
+        <property name="username" value="111111" />
+        <property name="password" value="2222" />
+    </bean>
+
+    <!-- OverrideConfigurer -->
+    <bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+        <property name="locations" value="classpath:propertyOverride.properties"/>
+    </bean>
+</beans>

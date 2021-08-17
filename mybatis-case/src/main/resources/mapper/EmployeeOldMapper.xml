@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.sam.mybatis.EmployeeMapperNS">
-    <select id="selectEmp" resultType="com.sam.mybatis.Employee">
+    <select id="selectEmp" resultType="com.sam.mybatis.dao.Employee">
         select id, last_name as LastName, gender, email from tbl_employee where id = #{id}
     </select>
 </mapper>

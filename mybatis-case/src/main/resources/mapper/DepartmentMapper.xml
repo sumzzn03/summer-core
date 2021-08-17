@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sam.mybatis.mapper.DepartmentMapper">
+    <select id="getDeptById" resultType="com.sam.mybatis.dao.Department">
+        select id, dept_name as deptName from tbl_dept where id = #{id}
+    </select>
+
+    <!--  集合类型的级联查询  -->
+    <resultMap id="MyDept" type="com.sam.mybatis.dao.Department">
+        <id column="id" property="id" />
+        <result column="dept_name" property="deptName" />
+        <collection property="employeeList" ofType="com.sam.mybatis.dao.Employee">
+            <id column="emp_id" property="id" />
+            <result column="last_name" property="lastName" />
+            <result column="gender" property="gender" />
+            <result column="email" property="email" />
+        </collection>
+    </resultMap>
+
+    <select id="getDeptAndEmpListByAssoc" resultMap="MyDept">
+        select
+            a.id as id,
+            a.dept_name as dept_name,
+            b.id as emp_id,
+            b.last_name as last_name,
+            b.gender as gender,
+            b.email as email
+        from
+            tbl_dept a left join tbl_employee b on a.id = b.dept_id
+        where a.id = 3
+    </select>
+
+    <!--  集合类型的分步查询  -->
+    <resultMap id="MyDeptStep" type="com.sam.mybatis.dao.Department">
+        <id column="id" property="id" />
+        <result column="dept_name" property="deptName" />
+        <collection property="employeeList" select="com.sam.mybatis.mapper.EmployeeMapper.getEmployeeListByDeptId" column="id" />
+    </resultMap>
+
+    <select id="getDeptAndEmpListByStep" resultMap="MyDeptStep">
+        select * from tbl_dept where id = #{id}
+    </select>
+
+    <!--  association & collection  -->
+    <!--  多个参数：column="{key1=column1,key2=column2}"  -->
+    <!--  懒加载：fetchType="lazy"  -->
+
+</mapper>

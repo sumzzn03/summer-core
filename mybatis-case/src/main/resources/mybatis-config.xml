@@ -4,24 +4,78 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!--  properties 用于替换配置  -->
+    <properties resource="datasource.properties"></properties>
+
+    <!--  settings 下面可以设置很多重要的全局配置  -->
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING" />
+<!--        <setting name="mapUnderscoreToCamelCase" value="true" />-->
+
+        <!--    延迟加载配置项：lazyLoadingEnabled、aggressiveLazyLoading    -->
+        <!--  <setting name="lazyLoadingEnabled" value="true"/>  -->
+        <!--  <setting name="aggressiveLazyLoading" value="false"/>  -->
     </settings>
 
+    <typeAliases>
+        <!--
+        1. 通过 typeAlias 标签指定别名
+        2. 通过 package 标签定义包下的别名
+        3.通过 @Alias 注释到实体类
+        -->
+        <!--  <typeAlias type="com.sam.mybatis.dao.Employee" alias="employee" />  -->
+        <!--  <package name="com.sam.mybatis" />  -->
+    </typeAliases>
+
+    <typeHandlers>
+        <!--  <typeHandler handler="org.apache.ibatis.type.IntegerTypeHandler" />  -->
+    </typeHandlers>
+
+    <!--
+    <plugins>
+        <plugin interceptor=""></plugin>
+    </plugins>
+    -->
+
+    <!--
+      1. transactionManager: JDBC、MANAGED
+      2. dataSource: UNPOOLED、POOLED、JNDI
+    -->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/summer-db"/>
-                <property name="username" value="root"/>
-                <property name="password" value="1234"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
 
+    <!--
+      1. 获取连接的数据库厂商名称
+      2. 使用 databaseId 设置特定数据库的 sql
+    -->
+    <databaseIdProvider type="DB_VENDOR">
+        <property name="MySQL" value="mysql" />
+        <property name="Oracle" value="oracle" />
+    </databaseIdProvider>
+
+    <!--
+      1. resource 通过类路径的方式，指定映射文件
+      2. file 指定磁盘、网络上的映射文件
+      3. class 指定访问接口类：
+        1）接口配置文件应与接口类在同包下、同名
+        2）使用功能注解在接口类上，进行数据库访问，替换映射文件
+      4. 通过 package 元素设置包的接口文件，映射文件也应同包、同名
+    -->
     <mappers>
-        <mapper resource="EmployeeOldMapper.xml"/>
-        <mapper resource="EmployeeMapper.xml"/>
+        <mapper resource="mapper/EmployeeOldMapper.xml"/>
+        <mapper resource="mapper/EmployeeMapper.xml"/>
+        <mapper resource="mapper/DepartmentMapper.xml"/>
+        <!--  <package name="com.sam.mybatis"/>  -->
     </mappers>
+
+    <!--  标签配置是有顺序的  -->
 </configuration>

@@ -74,6 +74,7 @@
         <mapper resource="mapper/EmployeeOldMapper.xml"/>
         <mapper resource="mapper/EmployeeMapper.xml"/>
         <mapper resource="mapper/DepartmentMapper.xml"/>
+        <mapper resource="mapper/EmployeeDynamicMapper.xml"/>
         <!--  <package name="com.sam.mybatis"/>  -->
     </mappers>
 

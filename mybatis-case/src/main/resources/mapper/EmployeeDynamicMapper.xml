@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sam.mybatis.mapper.EmployeeDynamicMapper">
+
+    <!--    使用 if、where 进行判断-->
+    <select id="getEmployeeListByIf" resultType="com.sam.mybatis.dao.Employee">
+        select * from tbl_employee
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+            <if test="lastName!=null and lastName!=''">
+                and last_name like #{lastName}
+            </if>
+            <if test="email!=null and email.trim()!=''">
+                and email=#{email}
+            </if>
+            <if test="gender==0 or gender==1">
+                and gender=#{gender}
+            </if>
+        </where>
+    </select>
+
+    <!--    使用 trim 标签-->
+    <select id="getEmployeeListByTrim" resultType="com.sam.mybatis.dao.Employee">
+        select * from tbl_employee
+        <trim prefix="where" suffixOverrides="and">
+            <if test="id!=null">
+                id=#{id} and
+            </if>
+            <if test="lastName!=null and lastName!=''">
+                last_name like #{lastName} and
+            </if>
+            <if test="email!=null and email.trim()!=''">
+                email=#{email} and
+            </if>
+            <if test="gender==0 or gender==1">
+                gender=#{gender} and
+            </if>
+        </trim>
+    </select>
+
+    <!--    使用 choose 标签-->
+    <select id="getEmployeeListByChoose" resultType="com.sam.mybatis.dao.Employee">
+        select * from tbl_employee
+        <where>
+            <choose>
+                <when test="id!=null">
+                    id = #{id}
+                </when>
+                <when test="lastName!=null">
+                    last_name like #{lastName}
+                </when>
+                <when test="email!=null">
+                    email = #{email}
+                </when>
+                <otherwise>
+                    gender = 0
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <!--    使用 set 标签-->
+    <update id="updateEmployee">
+        update tbl_employee
+        <set>
+            <if test="lastName!=null">
+                last_name = #{lastName},
+            </if>
+            <if test="email!=null">
+                email = #{email},
+            </if>
+            <if test="gender!=null">
+                gender = #{gender},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--    使用 foreach 标签-->
+    <select id="getEmployeeListByForEach" resultType="com.sam.mybatis.dao.Employee">
+        select * from tbl_employee where id in
+        <foreach collection="idList" item="item_id" separator="," open="(" close=")">
+            #{item_id}
+        </foreach>
+    </select>
+</mapper>

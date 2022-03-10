@@ -11,5 +11,17 @@
 
     <artifactId>logging-case</artifactId>
 
-
+    <dependencies>
+        <!--   使用 log4j 需要 log4j-core、log4j-api 两个包     -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.5</version>
+        </dependency>
+    </dependencies>
 </project>
